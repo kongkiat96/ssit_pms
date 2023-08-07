@@ -296,11 +296,11 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                                       ?>
                                         <?php if ($showroom->se_li_status == '1') { ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } elseif ($showroom->se_li_status == '2') {  ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } ?>
 
@@ -343,11 +343,11 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                                       ?>
                                         <?php if ($showroom->se_li_status == '1') { ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } elseif ($showroom->se_li_status == '2') {  ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } ?>
 
@@ -389,11 +389,11 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                                       ?>
                                         <?php if ($showroom->se_li_status == '1') { ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } elseif ($showroom->se_li_status == '2') {  ?>
                                           <div class="col-md-2 col-sm-4 mt-2">
-                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                           </div>
                                         <?php } ?>
 
