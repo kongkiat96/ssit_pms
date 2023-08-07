@@ -261,7 +261,7 @@
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <?php
             $i = 0;
-            $getbuilding = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '2' AND se_status = '1'");
+            $getbuilding = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '3' AND se_status = '1'");
             while ($showlist = mysqli_fetch_object($getbuilding)) {
                 $i++
             ?>
@@ -273,7 +273,7 @@
         <div class="tab-content" id="pills-tabContent">
             <?php
             $i = 0;
-            $getbuilding_detail = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '2' AND se_status = '1'");
+            $getbuilding_detail = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '3' AND se_status = '1'");
             while ($showlist_detail = mysqli_fetch_object($getbuilding_detail)) {
                 $i++
             ?>
@@ -284,7 +284,7 @@
                             <ul class="nav nav-tabs nav-stacked flex-column">
                                 <?php
                                 $i = 0;
-                                $getfloor = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showlist_detail->se_id . "' AND se_group = '2' AND se_li_status != '0'");
+                                $getfloor = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showlist_detail->se_id . "' AND se_group = '3' AND se_li_status != '0'");
                                 while ($showfloor = mysqli_fetch_object($getfloor)) {
                                     $i++
                                 ?>
@@ -298,7 +298,7 @@
                         <div class="tab-content col-sm-10">
                             <?php
                             $i = 0;
-                            $getfloor_detail = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showlist_detail->se_id . "' AND se_group = '2' AND se_li_status != '0'");
+                            $getfloor_detail = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showlist_detail->se_id . "' AND se_group = '3' AND se_li_status != '0'");
                             while ($showfloor_detail = mysqli_fetch_object($getfloor_detail)) {
                                 $i++
                             ?>

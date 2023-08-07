@@ -324,7 +324,7 @@
                         <label for="department"><strong>สังกัด : </strong></label>
                     </div>
                     <div class="col-md-3 col-sm-6 text-md-left text-sm-center">
-                        <label for="department"><?php echo $guest_detail->department; ?></label>
+                        <label for="department"><?php echo getDepartName($guest_detail->department); ?></label>
                     </div>
                     <div class="col-md-3 col-sm-6 text-md-right text-sm-center">
                         <label for="status_guest"><strong>สถานะ : </strong></label>
@@ -443,7 +443,7 @@
 
                 </div>
 
-                <div class="form-group row mt-2">
+                <!-- <div class="form-group row mt-2">
                     <div class="col-md-4 col-sm-6 text-md-right text-sm-center">
                         <label for="prefix_name"><strong>รายละเอียดเพิ่มเติม : </strong></label>
                     </div>
@@ -457,7 +457,7 @@
                                                     ?></label>
                     </div>
 
-                </div>
+                </div> -->
                 <?php if ($_SESSION['uclass'] != '1') { ?>
                     <div class="form-group row mt-2">
                         <div class="col-md-4 col-sm-6 text-md-right text-sm-center">

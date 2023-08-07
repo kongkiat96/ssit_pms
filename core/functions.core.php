@@ -122,6 +122,9 @@ function building($id)
         case '2':
             echo 'อาคาร Horizon';
             break;
+        case '3':
+            echo 'อาคาร Vertical View';
+            break;
         default:
             echo 'อื่น ๆ';
     }
@@ -149,6 +152,16 @@ function prefixConvertorUsername($prefixusername)
     $getprefix = $getdata->my_sql_query($connect, null, 'user', "user_key='" . $prefixusername . "'");
 
     return $getprefix->name . '&nbsp;' . $getprefix->lastname;
+}
+
+function getDepartName($getID)
+{
+    $getdata = new clear_db();
+    $connect = $getdata->my_sql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    mysqli_set_charset($connect, 'utf8');
+    $getDepartName = $getdata->my_sql_query($connect, null,'department_name', "id ='" . $getID . "'");
+
+    return $getDepartName->department_name;
 }
 
 function Userlogin($getuser)

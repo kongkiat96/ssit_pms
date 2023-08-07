@@ -41,17 +41,17 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title font-weight-bold">เพิ่มแผนก</h5>
+					<h5 class="modal-title font-weight-bold">เพิ่มสังกัด</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="department_name">ชื่อแผนก</label>
+						<label for="department_name">ชื่อสังกัด</label>
 						<input type="text" name="department_name" id="department_name" class="form-control" required>
 						<div class="invalid-feedback">
-							ระบุ ชื่อแผนก
+							ระบุ ชื่อสังกัด
 						</div>
 					</div>
 				</div>
@@ -325,10 +325,10 @@
 				<a class="nav-link active" id="prefixname-tab" data-toggle="tab" href="#prefixname" role="tab" aria-controls="prefixname" aria-selected="true">
 					<i class="mdi mdi-star mr-1"></i> คำนำหน้าชื่อ</a>
 			</li>
-			<!-- <li class="nav-item">
-				<a class="nav-link" id="department-tab" data-toggle="tab" href="#department" role="tab" aria-controls="department" aria-selected="false"><i class="mdi mdi-buffer mr-1"></i> แผนก</a>
-			</li>
 			<li class="nav-item">
+				<a class="nav-link" id="department-tab" data-toggle="tab" href="#department" role="tab" aria-controls="department" aria-selected="false"><i class="mdi mdi-buffer mr-1"></i> สังกัด</a>
+			</li>
+			<!-- <li class="nav-item">
 				<a class="nav-link" id="brand-tab" data-toggle="tab" href="#brand" role="tab" aria-controls="brand" aria-selected="false">
 					<i class="mdi mdi-box-shadow mr-1"></i> ยี่ห้อ</a>
 			</li> -->
@@ -401,14 +401,14 @@
 				<div class="card shadow">
 					<div class="card-body">
 						<div class="row">
-							<button class="btn btn-success btn-xs float-right mb-2" data-toggle="modal" data-target="#modal_new_department"><i class="fa fa-plus fa-fw"></i> เพิ่มแผนก</button>
+							<button class="btn btn-success btn-xs float-right mb-2" data-toggle="modal" data-target="#modal_new_department"><i class="fa fa-plus fa-fw"></i> เพิ่มสังกัด</button>
 						</div>
 						<div class="responsive-data-table-2">
 							<table id="responsive-data-table-2" class="table dt-responsive nowrap hover text-center" width="100%">
 								<thead class="bg-info text-white font-weight-bold">
 									<tr>
 										<td>ลำดับ</td>
-										<td>รายชื่อแผนก</td>
+										<td>รายชื่อสังกัด</td>
 										<td>การแสดงผล</td>
 										<td>จัดการ</td>
 									</tr>

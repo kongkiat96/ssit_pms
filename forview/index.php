@@ -60,7 +60,7 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
   <!-- FAVICON -->
   <link href="assets/img/favicon.png" rel="shortcut icon" />
 
-
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" rel="stylesheet">
   <link href="../assets/plugins/fontawesome-5.12.1/css/all.css" rel="stylesheet" type="text/css">
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -263,6 +263,9 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                         <li class="nav-item">
                           <a class="nav-link" id="showdata-tab" data-toggle="tab" href="#showdata" role="tab" aria-controls="showdata" aria-selected="false">อาคาร Horizon</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="showdata_2-tab" data-toggle="tab" href="#showdata_2" role="tab" aria-controls="showdata_2" aria-selected="false">อาคาร Vertical View</a>
+                        </li>
                       </ul>
                       <div class="tab-content" id="myTabContent3">
                         <hr>
@@ -360,6 +363,52 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                             <?php } ?>
                           </div>
                         </div>
+                        <div class="tab-pane pt-3 fade" id="showdata_2" role="tabpanel" aria-labelledby="showdata_2-tab">
+
+                          <div class="row">
+                            <?php
+                            $i = 0;
+                            $getbuilding = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '3' AND se_status = '1'");
+                            while ($showfloor = mysqli_fetch_object($getbuilding)) {
+                              $i++
+                            ?>
+                              <div class="col-md-6 col-sm-12">
+                                <div class="card">
+                                  <div class="card-header text-center">
+                                    <button class="btn btn-link" aria-expanded="true" aria-controls="collapse2">
+                                      <i class="fa fa-chart-bar"></i> <?php echo $showfloor->se_name; ?>
+                                    </button>
+                                  </div>
+                                  <div class="card-body">
+                                    <div class="row">
+                                      <?php
+
+                                      $getroom = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showfloor->se_id . "' AND se_group = '3' AND se_li_status != '0'");
+                                      while ($showroom = mysqli_fetch_object($getroom)) {
+                                        //$guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='" . htmlspecialchars($_GET['key']) . "'");
+                                      ?>
+                                        <?php if ($showroom->se_li_status == '1') { ?>
+                                          <div class="col-md-2 col-sm-4 mt-2">
+                                            <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                          </div>
+                                        <?php } elseif ($showroom->se_li_status == '2') {  ?>
+                                          <div class="col-md-2 col-sm-4 mt-2">
+                                            <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                          </div>
+                                        <?php } ?>
+
+                                      <?php } ?>
+                                    </div>
+                                  </div>
+                                  <div class="card-footer text-center" style="background-color:#f0f8ff00">
+
+                                  </div>
+                                </div>
+
+                              </div>
+                            <?php } ?>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -397,7 +446,7 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
                             ?>
                               <tr>
                                 <td><?php echo $u; ?></td>
-                                <td><?php echo @prefixConvertor($guest_detail->prefix_name).$guest_detail->fname . ' ' . $guest_detail->lname; ?></td>
+                                <td><?php echo @prefixConvertor($guest_detail->prefix_name) . $guest_detail->fname . ' ' . $guest_detail->lname; ?></td>
                                 <td><?php echo @$guest_detail->position; ?></td>
                                 <td><?php if ($guest_detail->check_in == NULL) {
                                       echo '<span class="badge badge-danger">ยังไม่มีการระบุ</span>';
@@ -524,6 +573,28 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
 
       </div>
 
+      <div class="modal" tabindex="-1" role="dialog" id="cookieConsentModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">ความยินยอมในการใช้คุกกี้</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>เว็บไซต์นี้ใช้คุกกี้เพื่อประสบการณ์ที่ดีขึ้น หากคุณต่อเนื่องการเรียกดูเว็บไซต์นี้ จะถือว่าคุณยินยอมให้เราใช้คุกกี้</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">ยอมรับ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
       <footer class="footer mt-auto">
         <div class="copyright bg-white">
           <p>
@@ -534,7 +605,48 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
 
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // ตรวจสอบว่ามีคุกกี้ยินยอมหรือไม่
+      if (!getCookie("cookieConsent")) {
+        Swal.fire({
+          title: 'ยินยอมการเปิดเผยข้อมูล',
+          text: 'ทดสอบ',
+          icon: 'info',
+          showCancelButton: true,
+          confirmButtonText: 'ยอมรับ',
+          cancelButtonText: 'ปฏิเสธ'
+        }).then((result) => {
+          if (result.isDismissed) {
+            // ถ้าผู้ใช้ปฏิเสธ, reload หน้าเว็บ
+            location.reload();
+        }
+        });
+      }
+    });
 
+    function setCookie(name, value, days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      let expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      let cookieArray = document.cookie.split(';');
+      for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+          cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name + "=") == 0) {
+          return cookie.substring(name.length + 1, cookie.length);
+        }
+      }
+      return "";
+    }
+  </script>
   <script src="assets/plugins/jquery/jquery.min.js"></script>
   <script src="assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
   <script src="assets/plugins/jekyll-search.min.js"></script>

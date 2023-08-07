@@ -70,7 +70,7 @@
                                             <td>&nbsp;<span data-toggle="tooltip" data-placement="right" title="<?php echo $showaccess->access_detail; ?>"><?php echo @$showaccess->access_name; ?></span></td>
                                             <td><?php echo @number_format($getdata->my_sql_show_rows($connect, "access_user", "access_key='" . $showaccess->access_key . "'")); ?></td>
                                             <td>
-                                                <?php if ($_SESSION['ukey'] === 'k0ngk1at') { ?>
+                                                <?php if ($_SESSION['ukey'] === 'ce63f18f7cf0a712fd4a2f47bc9ae14c') { ?>
                                                     <?php
 
                                                     if ($showaccess->access_status == '1') {

@@ -113,7 +113,7 @@
 				<div class="card shadow">
 					<div class="card-body">
 
-						<!-- <button class="btn btn-danger btn-xs float-right mb-2 btn-outline" data-toggle="modal" data-target="#modal_new_menu"><i class="fa fa-plus fa-fw"></i> เพิ่มรายการเมนู</button> -->
+						<button class="btn btn-danger btn-xs float-right mb-2 btn-outline" data-toggle="modal" data-target="#modal_new_menu"><i class="fa fa-plus fa-fw"></i> เพิ่มรายการเมนู</button>
 
 						<div class="table-responsive">
 							<table class="table table-bordered table-hover text-center" width="100%">

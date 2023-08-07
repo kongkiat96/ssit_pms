@@ -19,6 +19,7 @@ $guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='"
                 <option value="">--- เลือกข้อมูล ---</option>
                 <option value="1">อาคาร Vertex View </option>
                 <option value="2">อาคาร Horizon </option>
+                <option value="3">อาคาร Vertical View </option>
             </select>
             <div class="invalid-feedback">
                 เลือก อาคาร.

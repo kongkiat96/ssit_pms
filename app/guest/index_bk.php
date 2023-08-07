@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <!-- <div class="col-md-3 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="prefixname">คำนำหน้าชื่อ</label>
                     <select name="prefixname" id="prefixname" class="form-control select2bs4" required style="width: 100%;">
                         <option value="">--- เลือกข้อมูล ---</option>
@@ -55,62 +55,72 @@
                     <div class="invalid-feedback">
                         เลือก คำนำหน้า.
                     </div>
-                </div> -->
-                <div class="col-md-4 col-sm-12">
+                </div>
+                <div class="col-md-3 col-sm-12">
                     <label for="fname">ชื่อเจ้าหน้าที่</label>
                     <input type="text" name="fname" id="fname" class="form-control input-sm" placeholder="ชื่อเจ้าหน้าที่" autofocus required>
                     <div class="invalid-feedback">
                         ระบุ ชื่อเจ้าหน้าที่.
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="lname">นามสกุลเจ้าหน้าที่</label>
                     <input type="text" name="lname" id="lname" class="form-control input-sm" placeholder="นามสกุลเจ้าหน้าที่" required>
                     <div class="invalid-feedback">
                         ระบุ นามสกุลเจ้าหน้าที่.
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="position">ตำแหน่ง</label>
                     <input type="text" name="position" id="position" class="form-control input-sm" placeholder="ตำแหน่ง" required>
                     <div class="invalid-feedback">
                         ระบุ ตำแหน่ง.
                     </div>
                 </div>
-
             </div>
             <div class="form-group row">
-
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="department">สังกัด</label>
-                    <!-- <input type="text" name="department" id="department" class="form-control input-sm" placeholder="สังกัด" required> -->
-                    <select name="department" id="department" class="form-control select2bs4" required style="width: 100%;">
-                        <option value="">--- เลือกข้อมูล ---</option>
-                        <?php $getDepart = $getdata->my_sql_select($connect, NULL, "department_name", "department_status ='1' ORDER BY department_name");
-                        while ($showDepart = mysqli_fetch_object($getDepart)) {
-                            echo '<option value="' . $showDepart->id . '">' . $showDepart->department_name . '</option>';
-                        }
-                        ?>
-                    </select>
+                    <input type="text" name="department" id="department" class="form-control input-sm" placeholder="สังกัด" required>
                     <div class="invalid-feedback">
                         ระบุ สังกัด.
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+
+                <div class="col-md-3 col-sm-12">
                     <label for="tel">หมายเลขโทรศัพท์</label>
                     <input type="tel" name="tel" id="tel" class="form-control input-sm" placeholder="หมายเลขโทรศัพท์" required>
                     <div class="invalid-feedback">
                         ระบุ หมายเลขโทรศัพท์.
                     </div>
                 </div>
-                <!-- <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <label for="idcard">เลขประจำตัวเจ้าหน้าที่</label>
                     <input type="text" name="idcard" id="idcard" class="form-control input-sm" placeholder="เลขประจำตัวเจ้าหน้าที่" required>
                     <div class="invalid-feedback">
                         ระบุ เลขประจำตัวเจ้าหน้าที่.
                     </div>
-                </div> -->
-                <div class="col-md-4 col-sm-12">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3 col-sm-12">
+                    <label for="status_guest">สถานะ</label>
+                    <select name="status_guest" id="status_guest" class="form-control select2bs4 input-sm" required style="width: 100%;">
+                        <option value="">--- เลือกข้อมูล ---</option>
+                        <option value="1">เจ้าหน้าที่</option>
+                        <option value="2">ลูกจ้าง สทอภ.</option>
+                        <option value="3">ลูกจ้างโครงการ</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        เลือก สถานะ.
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <label for="end_date">วันที่สิ้นสุดโครงการ</label>
+                    <input type="date" name="end_date" id="end_date" class="form-control input-sm" >
+                </div>
+
+                <div class="col-md-3 col-sm-12">
                     <label for="building">อาคาร</label>
                     <select name="building" id="building" class="form-control select2bs4 input-sm" required style="width: 100%;" onchange="getroomListcheck(this.value)">
                         <option value="">--- เลือกข้อมูล ---</option>
@@ -122,9 +132,7 @@
                         เลือก อาคาร.
                     </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="floor">ชั้น</label>
                     <select name="floor" id="floor" class="form-control select2bs4 input-sm" required style="width: 100%;" onchange="getroomListcheckroom(this.value)">
                         <option value="">--- เลือกข้อมูล ---</option>
@@ -133,8 +141,11 @@
                         เลือก ชั้น.
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-4 col-sm-12">
+            <div class="form-group row">
+                
+                <div class="col-md-3 col-sm-12">
                     <label for="room">ห้อง</label>
                     <select name="room" id="room" class="form-control select2bs4 input-sm" required style="width: 100%;">
                         <option value="">--- เลือกข้อมูล ---</option>
@@ -145,45 +156,20 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-12">
-                    <label for="status_guest">สถานะ</label>
-                    <select name="status_guest" id="mySelect" class="form-control select2bs4 input-sm" required style="width: 100%;">
-                        <option value="">--- เลือกข้อมูล ---</option>
-                        <option value="1">เจ้าหน้าที่</option>
-                        <option value="2">ลูกจ้าง สทอภ.</option>
-                        <option value="3">ลูกจ้างโครงการ</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        เลือก สถานะ.
-                    </div>
-                </div>
-
-
-
-
-            </div>
-
-            <div class="form-group row">
-
-                <div id="myDiv" class="col-md-4 col-sm-12" style="display: none;">
-                    <label for="end_date">วันที่สิ้นสุดโครงการ</label>
-                    <input type="date" name="end_date" id="end_date" class="form-control input-sm">
-                </div>
-
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-3 col-sm-12">
                     <label for="pic">รูปถ่าย</label>
                     <input type="file" name="pic" id="pic" class="form-control input-sm" placeholder="รูปถ่าย">
                     <div class="invalid-feedback">
                         ระบุ รูปถ่าย.
                     </div>
                 </div>
-                <!-- <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <label for="detail">รายละเอียดเพิ่มเติม (ถ้ามี)</label>
                     <textarea name="detail" id="" cols="20" rows="2" class="form-control"></textarea>
-                </div> -->
+                </div>
             </div>
             <div class="form-group row">
-
+                
             </div>
 
             <div class="form-group row">
@@ -199,16 +185,3 @@
 
     </div>
 </div>
-
-<script type="">
-    $(document).ready(function(){
-        $('#mySelect').on('change', function() {
-        if ( this.value == '3')
-        // เมื่อเลือก option value = '1'
-        $("#myDiv").show();
-        else
-        // เมื่อเลือก option ที่ไม่ใช่ '1'
-        $("#myDiv").hide();
-    });
-});
-</script>

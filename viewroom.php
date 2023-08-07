@@ -109,7 +109,7 @@ $guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='"
               <label for="prefix_name"><strong>ชื่อ - นามสกุล : </strong></label>
             </div>
             <div class="col-md-3 col-sm-6 text-md-left text-sm-center">
-              <label for="prefix_code"><?php echo @prefixConvertor($guest_detail->prefix_name).$guest_detail->fname . ' ' . $guest_detail->lname; ?></label>
+              <label for="prefix_code"><?php echo @prefixConvertor($guest_detail->prefix_name) . $guest_detail->fname . ' ' . $guest_detail->lname; ?></label>
             </div>
             <div class="col-md-3 col-sm-6 text-md-right text-sm-center">
               <label for="prefix_name"><strong>ตำแหน่ง : </strong></label>
@@ -124,7 +124,7 @@ $guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='"
               <label for="prefix_name"><strong>สังกัด : </strong></label>
             </div>
             <div class="col-md-2 col-sm-6 text-md-left text-sm-center">
-              <label for="prefix_code"><?php echo $guest_detail->department; ?></label>
+              <label for="prefix_code"><?php echo getDepartName($guest_detail->department); ?></label>
             </div>
             <div class="col-md-4 col-sm-6 text-md-right text-sm-center">
               <label for="prefix_name"><strong>สถานะผู้เข้าพัก : </strong></label>
@@ -133,7 +133,7 @@ $guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='"
               <label for="prefix_code"><?php echo @status_guest($guest_detail->status_guest); ?></label>
             </div>
 
-            
+
           </div>
 
 

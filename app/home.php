@@ -71,6 +71,9 @@ $cusmenus2 = $getdata->my_sql_query($connect, null, 'menus', "menu_status ='1' A
                             <li class="nav-item">
                                 <a class="nav-link" id="showdata-tab" data-toggle="tab" href="#showdata" role="tab" aria-controls="showdata" aria-selected="false">อาคาร Horizon</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="showdata_2-tab" data-toggle="tab" href="#showdata_2" role="tab" aria-controls="showdata_2" aria-selected="false">อาคาร Vertical View</a>
+                            </li>
                         </ul>
                         <div class="tab-content" id="myTabContent3">
                             <hr>
@@ -101,11 +104,11 @@ $cusmenus2 = $getdata->my_sql_query($connect, null, 'menus', "menu_status ='1' A
                                                         ?>
                                                             <?php if ($showroom->se_li_status == '1') { ?>
                                                                 <div class="col-md-2 col-sm-4 mt-2">
-                                                                    <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline"></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                    <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                                                 </div>
                                                             <?php } elseif ($showroom->se_li_status == '2') {  ?>
                                                                 <div class="col-md-2 col-sm-4 mt-2">
-                                                                    <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline"></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                    <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                                                 </div>
                                                             <?php } ?>
 
@@ -148,11 +151,57 @@ $cusmenus2 = $getdata->my_sql_query($connect, null, 'menus', "menu_status ='1' A
                                                         ?>
                                                             <?php if ($showroom->se_li_status == '1') { ?>
                                                                 <div class="col-md-2 col-sm-4 mt-2">
-                                                                    <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class=" mdi mdi-checkbox-marked-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                    <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i></i> <?php echo $showroom->se_li_name; ?></a>
                                                                 </div>
                                                             <?php } elseif ($showroom->se_li_status == '2') {  ?>
                                                                 <div class="col-md-2 col-sm-4 mt-2">
-                                                                    <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="mdi mdi-close-circle-outline mr-1"></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                    <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                </div>
+                                                            <?php } ?>
+
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer text-center" style="background-color:#f0f8ff00">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="tab-pane pt-3 fade" id="showdata_2" role="tabpanel" aria-labelledby="showdata_2-tab">
+
+                                <div class="row">
+                                    <?php
+                                    $i = 0;
+                                    $getbuilding = $getdata->my_sql_select($connect, NULL, "service", "se_id AND se_group = '3' AND se_status = '1'");
+                                    while ($showfloor = mysqli_fetch_object($getbuilding)) {
+                                        $i++
+                                    ?>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="card">
+                                                <div class="card-header text-center">
+                                                    <button class="btn btn-link" aria-expanded="true" aria-controls="collapse2">
+                                                        <i class="fa fa-chart-bar"></i> <?php echo $showfloor->se_name; ?>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <?php
+
+                                                        $getroom = $getdata->my_sql_select($connect, NULL, "service_list", "se_id = '" . $showfloor->se_id . "' AND se_group = '3' AND se_li_status != '0'");
+                                                        while ($showroom = mysqli_fetch_object($getroom)) {
+                                                            //$guest_detail = $getdata->my_sql_query($connect, NULL, "bm_guest", "key_guest='" . htmlspecialchars($_GET['key']) . "'");
+                                                        ?>
+                                                            <?php if ($showroom->se_li_status == '1') { ?>
+                                                                <div class="col-md-2 col-sm-4 mt-2">
+                                                                    <a class="mb-1 btn btn-outline-success" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-plus fa-lg"></i></i> <?php echo $showroom->se_li_name; ?></a>
+                                                                </div>
+                                                            <?php } elseif ($showroom->se_li_status == '2') {  ?>
+                                                                <div class="col-md-2 col-sm-4 mt-2">
+                                                                    <a class="mb-1 btn btn-outline-danger" data-toggle="modal" data-target="#genlink" data-whatever="<?php echo @$showroom->se_li_id; ?>"><i class="fas fa-user-slash fa-lg"></i> <?php echo $showroom->se_li_name; ?></a>
                                                                 </div>
                                                             <?php } ?>
 

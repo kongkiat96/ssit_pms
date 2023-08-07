@@ -117,7 +117,7 @@
                                                                         <h5><label for="prefix_name"><strong>สังกัด : </strong></label></h5>
                                                                     </div>
                                                                     <div class="col-md-6 col-sm-12 text-sm-center">
-                                                                        <h5> <label for="prefix_code"><?php echo $guest_detail->department; ?></label></h5>
+                                                                        <h5> <label for="prefix_code"><?php echo getDepartName($guest_detail->department); ?></label></h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">

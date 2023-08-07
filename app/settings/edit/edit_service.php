@@ -20,10 +20,16 @@ $getprefix_detail = $getdata->my_sql_query($connect, NULL, "service", "se_id='" 
 		<select name="edit_se_group" id="edit_se_group" class="form-control select2bs4">
 			<?php if ($getprefix_detail->se_group == '1') {
 				echo '<option value="1" selected>อาคาร Vertex View </option>
-				<option value="2">อาคาร Horizon </option>';
+				<option value="2">อาคาร Horizon </option>
+				<option value="3">อาคาร Vertical View </option>';
 			} elseif ($getprefix_detail->se_group == '2') {
 				echo '<option value="1">อาคาร Vertex View </option>
-				<option value="2" selected>อาคาร Horizon </option>';
+				<option value="2" selected>อาคาร Horizon </option>
+				<option value="3">อาคาร Vertical View </option>';
+			}elseif ($getprefix_detail->se_group == '3') {
+				echo '<option value="1">อาคาร Vertex View </option>
+				<option value="2">อาคาร Horizon </option>
+				<option value="3"selected>อาคาร Vertical View </option>';
 			}
 			?>
 		</select>

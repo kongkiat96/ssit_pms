@@ -318,12 +318,11 @@ if (isset($_POST['save_device'])) {
 //------------------------------------------------------------------------------
 
 if (isset($_POST['save_service'])) {
-	if (htmlspecialchars($_POST['service_name']) != NULL && $_POST['service_group']) {
+	if (htmlspecialchars($_POST['service_name']) != NULL && htmlspecialchars($_POST['service_group']) != NULL) {
 		$getdata->my_sql_insert(
 			$connect,
 			"service",
 			"se_name ='" . htmlspecialchars($_POST['service_name']) . "',
-			se_sort = '" . htmlspecialchars($_POST['service_sort']) . "',
             se_group = '" . htmlspecialchars($_POST['service_group']) . "'"
 		);
 

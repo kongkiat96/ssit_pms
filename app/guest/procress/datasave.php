@@ -47,7 +47,7 @@ if (isset($_POST['save_guest'])) {
 if (isset($_POST['save_edit_guest'])) {
 
     if (
-        htmlspecialchars($_POST['edit_prefixname']) != NULL &&
+        // htmlspecialchars($_POST['edit_prefixname']) != NULL &&
         htmlspecialchars($_POST['edit_fname'] != NULL)
     ) {
         $getdata->my_sql_update(
