@@ -140,7 +140,7 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
 
 
 
-                  <li>
+                  <!-- <li>
                     <a class="sidenav-item-link" href="../index.php">
                       <i class="mdi mdi-login"></i>
                       <span class="nav-text">&nbsp;เข้าสู่ระบบ</span>
@@ -148,7 +148,7 @@ $system_info = $getdata->my_sql_query($connect, NULL, "system_info", NULL);
 
 
                     </a>
-                  </li>
+                  </li> -->
 
 
 
